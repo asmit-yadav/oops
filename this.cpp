@@ -19,6 +19,13 @@ public:
         this->x = x;
         this->y = y;
     }
+    // copy constructor
+    A(A &obj) // pass by refrence
+    {
+        cout<<"copy constructor !"<<endl;
+        this->x=obj.x;
+        this->y=obj.y;
+    }
     void show()
     {
         cout << x << " " << y;
@@ -26,7 +33,7 @@ public:
 };
 int main()
 {
-    A ob1(10, 20), ob;
-
-    ob1.show();
+    A ob1(10, 20);
+    A ob(ob1); // copy costructor
+    ob.show();
 }
